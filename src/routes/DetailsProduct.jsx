@@ -15,7 +15,7 @@ function DetailsProduct() {
         getIds(id)
             .then((res) => {
                 setProduto(res)
-                // console.log(res)
+                console.log(res)
             }
             )
             .catch((err) => setProdErro(err));
