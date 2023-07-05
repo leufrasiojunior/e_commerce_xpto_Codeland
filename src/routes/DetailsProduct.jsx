@@ -7,6 +7,7 @@ function DetailsProduct() {
     // console.log(id);
     const [produto, setProduto] = useState();
     const [prodErro, setProdErro] = useState('');
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         obterproduto();
     }, []);
@@ -15,15 +16,18 @@ function DetailsProduct() {
         getIds(id)
             .then((res) => {
                 setProduto(res)
-                console.log(res)
+                setLoading(false)
             }
             )
             .catch((err) => setProdErro(err));
 
     };
     return (
-        <div></div>
-
+            { loading ? (
+              <h2>loading</h2>
+                ) :  {produto.map((p) => (
+                    <div key={p.id}>
+                        <div>{p.id}</div>}}
     )
 }
 
