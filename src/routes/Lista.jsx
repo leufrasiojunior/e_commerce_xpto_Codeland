@@ -27,11 +27,14 @@ function Lista() {
                 </div>
             ) : (
                 ids.map((i) => (
-                    <div key={i.id}>
-                        <div>{i.id}</div>
-                        <div>{i.nome}</div>
-                        <div>{i.preco}</div>
-                        <button onClick={() => handleClick(i.id)}>Ver detalhes</button>
+                    <div>
+                        <div className="container">
+                            <div key={i.id}>
+                                <div>{i.nome}</div>
+                                <div>{i.preco}</div>
+                                <button onClick={() => handleClick(i.id)}>Ver detalhes</button>
+                            </div>
+                        </div>
                     </div>
                 ))
             )}
