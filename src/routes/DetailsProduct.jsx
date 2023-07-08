@@ -1,16 +1,11 @@
 import { getIds } from "../services/getIds"
 import { useParams } from 'react-router-dom';
 import { React, useState, useEffect } from "react";
-import a from "../imgs/a.jpg"
-import b from "../imgs/b.jpg"
-import c from "../imgs/c.jpg"
-
 
 function DetailsProduct() {
+    const [isLoading, setLoading] = useState(true);
     let { id } = useParams();
-    // console.log(id);
     const [produto, setProduto] = useState([]);
-    const [prodErro, setProdErro] = useState('');
 
     useEffect(() => {
         obterproduto();
@@ -18,32 +13,30 @@ function DetailsProduct() {
 
     const obterproduto = () => {
         getIds(id)
-            .then((resp) => setProduto(resp))
-            .catch((err) => setProdErro(err));
+            .then((resp) => {
+                setProduto(resp); setLoading(false);
+            });
     };
+    if (isLoading) {
+        return <div className="App">Loading...</div>;
+    }
     return (
         <div className="container">
-            {prodErro ? (
-                <div>
-                    <h2>Algo deu errado.</h2>
+            <div>
+                <div className="product-box">
+                    <img src={produto.imagens[0].url} alt={produto.id} className="product-img"></img>
+                    <img src={produto.imagens[1].url} alt={produto.id} className="product-img"></img>
+                    <img src={produto.imagens[2].url} alt={produto.id} className="product-img"></img>
                 </div>
-            ) : (
-                <div>
-                    <div className="product-box">
-                        <img src={a} alt="imagem" className="product-img"></img>
-                        <img src={b} alt="imagem" className="product-img"></img>
-                        <img src={c} alt="imagem" className="product-img"></img>
-                    </div>
-                    <div className="product-desc">
-                        <div className="item">{produto.nome}</div>
-                        <div className="desc">{produto.descricao}</div>
-                        <div className="qtd">{produto.quantidade}</div>
-                        <div className="preco">R$ {produto.preco}</div>
-                    </div>
-                    <button>Adicionar ao Carrinho</button>
+                <div className="product-desc">
+                    <div className="item">{produto.nome}</div>
+                    <div className="desc">{produto.descricao}</div>
+                    <div className="qtd">{produto.quantidade}</div>
+                    <div className="preco">R$ {produto.preco}</div>
+
                 </div>
-            )
-            }
+                <button>Adicionar ao Carrinho</button>
+            </div>
         </div >
     )
 
