@@ -1,10 +1,25 @@
 import { getIds } from "../services/getIds"
 import { useParams } from 'react-router-dom';
 import { React, useState, useEffect } from "react";
-import a from "../imgs/a.jpg"
-import b from "../imgs/b.jpg"
-import c from "../imgs/c.jpg"
+import { Fade } from 'react-slideshow-image';
+import a from "../imgs/a.jpg";
+import b from "../imgs/b.jpg";
+import c from "../imgs/c.jpg";
 
+
+const spanStyle = {
+    padding: '20px',
+    background: '#efefef',
+    color: '#000000'
+}
+
+const divStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundSize: 'cover',
+    height: '400px'
+}
 
 function DetailsProduct() {
     let { id } = useParams();
@@ -29,9 +44,15 @@ function DetailsProduct() {
             ) : (
                 <div>
                     <div className="product-box">
-                        <img src={a} alt="imagem" className="product-img"></img>
-                        <img src={b} alt="imagem" className="product-img"></img>
-                        <img src={c} alt="imagem" className="product-img"></img>
+                        <Fade>
+                            <div className="slide-container">
+                                {produto.imagens(({ fadeImage }, index) => (
+                                    <div key={index}>
+                                        <img style={{ width: '100%' }} src={fadeImage.url} />
+                                    </div>
+                                ))}
+                            </div>
+                        </Fade>
                     </div>
                     <div className="product-desc">
                         <div className="item">{produto.nome}</div>
@@ -43,6 +64,7 @@ function DetailsProduct() {
                 </div>
             )
             }
+
         </div >
     )
 
