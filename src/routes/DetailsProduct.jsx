@@ -29,7 +29,7 @@ function DetailsProduct() {
                         <Zoom scale={0.4}>
                             {produto.imagens.map((fadeImage) => (
                                 <div key={produto.id}>
-                                    <img className="product-img" src={fadeImage.url} />
+                                    <img className="product-img" src={fadeImage.url} alt={produto.id} />
                                 </div>
                             ))}
                         </Zoom>
@@ -45,7 +45,7 @@ function DetailsProduct() {
                     <div className="preco">R$ {produto.preco}</div>
 
                 </div>
-                <button>Adicionar ao Carrinho</button>
+                <button className="button-68">Adicionar ao Carrinho</button>
             </div>
         </div >
     )

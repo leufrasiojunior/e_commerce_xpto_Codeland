@@ -27,13 +27,13 @@ function Lista() {
                         <h2>Algo deu errado.</h2>
                     </div>
                 ) : (
-                    ids.map((i) => (
+                    ids.map((i, index) => (
                         <div>
                             <div key={i.id} className="box">
                                 <div className="img"><img src={i.imagens[0].url} alt={i.nome} key={i.nome}></img></div>
                                 <div className="nome" key={i.nome}>{i.nome}</div>
                                 <div className="preco" key={i.preco}>R$: {i.preco}</div>
-                                <button className="button" onClick={() => handleClick(i.id)} key="1">Ver detalhes</button>
+                                <button className="button-17" onClick={() => handleClick(i.id)} key={index}>Ver detalhes</button>
                             </div>
                         </div>
                     ))
