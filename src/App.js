@@ -6,8 +6,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <a href="/contact">Entre em contato</a> */}
-      {/* <Lista /> */}
       <Outlet />
     </div>
   );

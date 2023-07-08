@@ -2,6 +2,7 @@ import { getIds } from "../services/getIds"
 import { useParams } from 'react-router-dom';
 import { React, useState, useEffect } from "react";
 import { Zoom } from 'react-slideshow-image';
+import { NumericFormat } from 'react-number-format';
 
 function DetailsProduct() {
     const [isLoading, setLoading] = useState(true);
@@ -19,14 +20,14 @@ function DetailsProduct() {
             });
     };
     if (isLoading) {
-        return <div className="App">Loading...</div>;
+        return <div className="loading">Loading...</div>;
     }
     return (
-        <div>
+        <div className="grid">
             <div className="containerDetails">
                 <div className="product-box">
                     <div className="slide-container">
-                        <Zoom scale={0.4}>
+                        <Zoom scale={1.1}>
                             {produto.imagens.map((fadeImage) => (
                                 <div key={produto.id}>
                                     <img className="product-img" src={fadeImage.url} alt={produto.id} />
@@ -34,18 +35,16 @@ function DetailsProduct() {
                             ))}
                         </Zoom>
                     </div>
-                    {/* <img src={produto.imagens[0].url} alt={produto.id} className="product-img"></img> */}
-                    {/* <img src={produto.imagens[1].url} alt={produto.id} className="product-img"></img> */}
-                    {/* <img src={produto.imagens[2].url} alt={produto.id} className="product-img"></img> */}
                 </div>
                 <div className="product-desc">
-                    <div className="item">{produto.nome}</div>
-                    <div className="desc">{produto.descricao}</div>
-                    <div className="qtd">{produto.quantidade}</div>
-                    <div className="preco">R$ {produto.preco}</div>
-
+                    <h1 className="item">{produto.nome}</h1>
+                    <p className="desc">{produto.descricao}</p>
+                    <label className="qtd">Quantidade Disponível: {produto.quantidade}</label><br />
+                    <NumericFormat value={produto.preco.toFixed(2)}
+                        displayType={'text'} thousandSeparator={true} prefix={'R$ '} /><br />
+                    <button className="button-68">Adicionar ao Carrinho</button>
                 </div>
-                <button className="button-68">Adicionar ao Carrinho</button>
+
             </div>
         </div >
     )
