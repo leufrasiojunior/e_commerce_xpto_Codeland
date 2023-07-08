@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 //Configurar o Router
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/Home";
 import ErrorPage from "./routes/ErrorPage";
 import Lista from "./routes/Lista";
 import DetailsProduct from "./routes/DetailsProduct";
+import Carrinho from "./routes/Carrinho";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/detail/:id",
         element: <DetailsProduct />,
+      },
+      {
+        path: "/carrinho",
+        element: <Carrinho />,
       },
     ],
   },

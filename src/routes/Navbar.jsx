@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom"
-// import logo from "../imgs/logo.svg"
+
+// function abrirmenu() {
+//     const hamburger = document.querySelector(".hamburger");
+//     const navMenu = document.querySelector(".nav-menu");
+//     hamburger.addEventListener("click", () => {
+//         hamburger.classList.toggle(".active");
+//         navMenu.classList.toggle("active");
+//     });
+// }
+
 
 function Navbar() {
-    // useExternalScripts("../")
     return (
         <div>
             <header>
@@ -20,12 +28,6 @@ function Navbar() {
                     </div>
                 </nav>
             </header>
-
-            {/* <nav>
-                <Link to='/'>Home Page Novo</Link>
-                <Link to='/produtos'>Produtos</Link>
-                <Link to='/detail'>Detalhes do Produto</Link>
-            </nav> */}
 
         </div>
     )

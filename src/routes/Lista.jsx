@@ -7,9 +7,9 @@ function Lista() {
     const [ids, setIds] = useState([]);
     const [idserro, setIdserro] = useState("");
     const navigate = useNavigate();
-    function handleClick(id) {
+    function handleClick(item) {
         // console.log(id);
-        navigate("/detail/" + id);
+        navigate("/detail/" + item);
     }
     useEffect(() => {
         reloadIds();
@@ -20,25 +20,26 @@ function Lista() {
             .catch((err) => setIdserro(err));
     };
     return (
-        <div>
-            {idserro ? (
-                <div>
-                    <h2>Algo deu errado.</h2>
-                </div>
-            ) : (
-                ids.map((i) => (
+        <div className="container">
+            {
+                idserro ? (
                     <div>
-                        <div className="container">
-                            <div key={i.id}>
-                                <div>{i.nome}</div>
-                                <div>{i.preco}</div>
-                                <button onClick={() => handleClick(i.id)}>Ver detalhes</button>
+                        <h2>Algo deu errado.</h2>
+                    </div>
+                ) : (
+                    ids.map((i) => (
+                        <div>
+                            <div key={i.id} className="box">
+                                <div className="img"><img src={i.imagens[0].url} alt={i.nome} key={i.nome}></img></div>
+                                <div className="nome" key={i.nome}>{i.nome}</div>
+                                <div className="preco" key={i.preco}>R$: {i.preco}</div>
+                                <button className="button" onClick={() => handleClick(i.id)} key="1">Ver detalhes</button>
                             </div>
                         </div>
-                    </div>
-                ))
-            )}
-        </div>
+                    ))
+                )
+            }
+        </div >
     );
 }
 
