@@ -20,7 +20,7 @@ function Lista() {
             .catch((err) => setIdserro(err));
     };
     return (
-        <div className="container">
+        <div className="container" key="index">
             {
                 idserro ? (
                     <div>

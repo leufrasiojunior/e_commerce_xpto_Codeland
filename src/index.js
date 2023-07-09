@@ -10,6 +10,7 @@ import ErrorPage from "./routes/ErrorPage";
 import Lista from "./routes/Lista";
 import DetailsProduct from "./routes/DetailsProduct";
 import Carrinho from "./routes/Carrinho";
+// import Teste from "./routes/Teste";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         path: "/carrinho",
         element: <Carrinho />,
       },
+      // {
+      //   path: "/teste",
+      //   element: <Teste />,
+      // },
     ],
   },
 ]);
