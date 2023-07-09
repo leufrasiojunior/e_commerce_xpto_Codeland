@@ -14,7 +14,7 @@ const Carrinho = () => {
     }
     function comprar() {
         localStorage.removeItem('carrinho');
-        alert('Parabéns! ESeu pagamento esta em processamento e em breve receberá um e-mail');
+        alert('Parabéns! Seu pagamento esta em processamento e em breve receberá um e-mail');
         navigate("/produtos");
     }
 
