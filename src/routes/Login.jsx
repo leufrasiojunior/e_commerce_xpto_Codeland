@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
     const data = {
         "nome": "",
         "email": "",
@@ -24,7 +25,7 @@ function Login() {
         i.preventDefault();
         axios.post('https://infracode-api.onrender.com/auth/login', inputLogin)
             .then((users) => {
-                localStorage.setItem('session', users.data.token)
+                alert('Usuário logado! Redirecionando para o carrinho'); localStorage.setItem('session', users.data.token); navigate("/carrinho")
             })
 
     }
