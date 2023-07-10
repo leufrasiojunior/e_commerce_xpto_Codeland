@@ -19,7 +19,7 @@ Foi usado o Vercel para deploy do projeto. Para acessar [Clique aqui](https://e-
 
 ## Bugs conhecidos e funções não implementadas
 
-- Ao entrar no carrinho não logado, fica em loop infinito
+- Ao entrar no carrinho não logado, ou sem produtos, fica em loop infinito
 - Não implementado carrinho completo. Parcialmente funcionando (Somente um produto por vez)
 - Não há indicação de nome de usuário e quantidade de itens no carrinho, nem a soma.
 - o CSS não foi feito com o styled-component.
