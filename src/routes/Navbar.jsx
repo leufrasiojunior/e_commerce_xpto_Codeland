@@ -24,7 +24,7 @@ function Navbar() {
                 <nav className="navbar">
                     <Link to="#" className="logo">XPTO</Link>
                     <ul className={active ? "nav-menu active" : "nav-menu"}>
-                        <li className="nav-itens"><Link to='/' className="nav-link">Home Page Novo</Link></li>
+                        <li className="nav-itens"><Link to='/' className="nav-link">Inicio</Link></li>
                         <li className="nav-itens"><Link to='/login' className="nav-link">Login</Link></li>
                         <li className="nav-itens"><Link to='/produtos' className="nav-link">Produtos</Link></li>
                         <li className="nav-itens"><Link to='/carrinho' className="nav-link">Carrinho</Link></li>

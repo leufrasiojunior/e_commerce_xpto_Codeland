@@ -561,9 +561,6 @@ input{
   outline:none
 }
 
-.btn-submit{
-  
-}
 
 .login{
   display: flex;
@@ -582,4 +579,13 @@ input{
   color: white;
   align-items: center;
   /* align-content: center; */
+}
+
+.meu-footer{
+  display: flex;
+  height: 100px;
+  background-color: #101026;
+  color: white;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

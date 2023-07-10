@@ -33,26 +33,6 @@ function DetailsProduct() {
         return <div className="loading">Loading...</div>;
     }
 
-
-    // const armazenar = (chave, valor) => {
-    //     // { JSON.parse(localStorage.getItem('carrinho')) != null ? JSON.parse(localStorage.getItem('carrinho')) : []; }
-    //     // console.log(valor)
-    //     // JSON.parse(localStorage.getItem(chave)) || []
-    //     const getLS = JSON.parse(localStorage.getItem(chave))
-    //     // console.log("getLS")
-    //     // console.log(getLS)
-    //     // console.log(getLS?.length)
-    //     // const setLS = [getLS?.length === undefined ? JSON.stringify([...getLS + valor]) : valor]
-    //     const setLS = [getLS, valor]
-    //     // console.log(getLS?.length == undefined ? "Valor verdadeiro" : "ValorFalso")
-    //     // console.log(getLS?.length === undefined || getLS?.length === 0 ? "Valor verdade" : "ValorFalso")
-    //     // localStorage.setItem(chave, JSON.stringify(getLS?.length === undefined ? setLS : valor))
-    //     // console.log(typeof (getLS?.length))
-    //     localStorage.setItem(chave, JSON.stringify(setLS));
-    //     // console.log("SetLS")
-    //     // console.log(setLS);
-    // };
-
     return (
         <div className="grid">
             <div className="containerDetails">

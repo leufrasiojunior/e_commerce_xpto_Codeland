@@ -5,6 +5,13 @@ import { useNavigate } from "react-router-dom";
 const Carrinho = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    // const [logado, setLogado] = useState(false);
+
+    // function verlogin() {
+    //     setLogado(true);
+    // }
+    const token = localStorage.getItem('session');
+    // console.log(token === null ? alert("Sessão não iniciada") : (alert("Sessão iniciada")
 
     const navigate = useNavigate();
     function remover() {
@@ -12,13 +19,19 @@ const Carrinho = () => {
         alert('Carrinho Limpo. Redirecionando para a página de produtos');
         navigate("/produtos");
     }
+    console.log(token?.length)
     function comprar() {
+
+        if (token?.length === undefined) {
+            (alert("Sessão não iniciada. Redirecionando para o login. Faça o login antes"), navigate("/login"))
+        } else if (token?.length >= 1) { comprado() }
+    }
+
+    function comprado() {
         localStorage.removeItem('carrinho');
         alert('Parabéns! Seu pagamento esta em processamento e em breve receberá um e-mail');
         navigate("/produtos");
     }
-
-
 
     useEffect(() => {
         const items = JSON.parse(localStorage.getItem('carrinho'));
@@ -36,8 +49,8 @@ const Carrinho = () => {
             <NumericFormat value={items.preco.toFixed(2)}
                 displayType={'text'} thousandSeparator={true} prefix={'R$ '} />
             <img src={items.imagens[0].url} alt={items.nome} key={items.nome} className='car-img'></img>
-            <buton className='button-68' onClick={() => comprar()}>Finalizar Compra</buton>
-            <buton className='button-5' onClick={() => remover()}>x</buton>
+            <button className='button-68' onClick={() => comprar()}>Finalizar Compra</button>
+            <button className='button-5' onClick={() => remover()}>x</button>
         </div>
     )
 }

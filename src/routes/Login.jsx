@@ -20,7 +20,7 @@ function Login() {
     const handledatalogin = (i) => {
         setinputLogin({ ...inputLogin, [i.target.name]: i.target.value })
     }
-    console.log(inputLogin)
+    // console.log(inputLogin)
     const cliclogin = (i) => {
         i.preventDefault();
         axios.post('https://infracode-api.onrender.com/auth/login', inputLogin)
