@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Projeto CodeLand - E-Commerce XPTO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O intuito do projeto é construir um e-commerce completo como projeto final.
 
-## Available Scripts
+Foi usado o Vercel para deploy do projeto. Para acessar [Clique aqui](https://e-commerce-xpto-codeland.vercel.app/)
 
-In the project directory, you can run:
+## Tecnologias e bibliotecas usadas
 
-### `npm start`
+- React
+- JS
+- UseState
+- UseEffects
+- Axios
+- Numeric Format
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Homepage](https://uploaddeimagens.com.br/images/004/537/479/original/home.jpg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\*\*
 
-### `npm test`
+## Bugs conhecidos e funções não implementadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Ao entrar no carrinho não logado, fica em loop infinito
+- Não implementado carrinho completo. Parcialmente funcionando (Somente um produto por vez)
+- Não há indicação de nome de usuário e quantidade de itens no carrinho, nem a soma.
+- o CSS não foi feito com o styled-component.
+- Como só tem um item no carrinho, o botão remove, e redireciona para a listagem de produtos.
 
-### `npm run build`
+## Como usar?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ao acessar a página principal já será mostrado a listagem de produtos.
+A página está responsiva, sendo que quando acessado de celular, será adaptado ao usuário.
+![Página responsiva](https://uploaddeimagens.com.br/images/004/537/480/original/home.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ao acessar a página de detalhes será exibido um carrossel de imagens, e ao lado uma descrição com o valor.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Página de Detalhes do produto](https://uploaddeimagens.com.br/images/004/537/481/original/home.jpg?1688957076)
+![Página de detalhes responsivo](https://uploaddeimagens.com.br/images/004/537/482/original/home2.jpg?1688957110)
 
-### `npm run eject`
+Ao clicar em Comprar agora, será redirecionado imediatamente para o carrinho.![Página de compras](https://uploaddeimagens.com.br/images/004/537/483/original/home2.jpg?1688957233)
+![Página de Compra responsivo](https://uploaddeimagens.com.br/images/004/537/484/original/home2.jpg?1688957318)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Caso o usuário esteja logado e clique em finalizar a compra, será processada. Caso não, será exibido um alerta informando que o usuário não está logado e redireciona para a página de login. Por algum problema na compilação do Vercel, isto não está funcionando.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Erro ao comprar sem logar](https://uploaddeimagens.com.br/images/004/537/485/original/home2.jpg?1688957473)
+![Página de login](https://uploaddeimagens.com.br/images/004/537/486/original/home2.jpg?1688957552)
+Aqui o usuário poderá realizar o cadastro normalmente ou logar.
+Ao logar será redirecionado para o carrinho.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Não foi possível incluir uma validação de formulários.
