@@ -19,14 +19,14 @@ const Carrinho = () => {
         alert('Carrinho Limpo. Redirecionando para a página de produtos');
         navigate("/produtos");
     }
-    console.log(token?.length)
-    function comprar() {
-        if (token?.length === undefined) {
-            (alert("Sessão não iniciada. Redirecionando para o login. Faça o login antes"), navigate("/login"))
-        } else if (token?.length >= 1) { comprado() }
-    }
+    // console.log(token?.length)
+    // function comprar() {
+    //     if (token?.length === undefined) {
+    //         (alert("Sessão não iniciada. Redirecionando para o login. Faça o login antes"), navigate("/login"))
+    //     } else if (token?.length >= 1) { comprado() }
+    // }
 
-    function comprado() {
+    function comprar() {
         localStorage.removeItem('carrinho');
         alert('Parabéns! Seu pagamento esta em processamento e em breve receberá um e-mail');
         navigate("/produtos");
