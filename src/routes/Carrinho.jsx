@@ -22,7 +22,8 @@ const Carrinho = () => {
     console.log(token?.length)
     function comprar() {
         if (token?.length === undefined) {
-            (alert("Sessão não iniciada. Redirecionando para o login. Faça o login antes"), navigate("/login"))
+            alert("Sessão não iniciada. Redirecionando para o login. Faça o login antes");
+            navigate("/login")
         } else if (token?.length >= 1) { comprado() }
     }
 
